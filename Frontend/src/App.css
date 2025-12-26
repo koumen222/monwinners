@@ -1,0 +1,136 @@
+/* ==========================
+   Wrapper principal de l'application
+========================== */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* ==========================
+   Container principal
+========================== */
+.app-container {
+  width: 100%;
+  max-width: 600px;       /* limite la largeur sur grands écrans */
+  margin: 0 auto;          /* centre horizontalement */
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================
+   Messages d'erreur
+========================== */
+.error-message {
+  background-color: #ef4444; /* rouge vif */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  animation: fadeIn 0.5s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  .error-message {
+    background-color: #dc2626;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   Titres et textes
+========================== */
+h1, h2, h3, h4 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #111827; /* gris foncé */
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #374151; /* gris moyen */
+}
+
+/* ==========================
+   Inputs et formulaires
+========================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3b82f6; /* bleu */
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+  outline: none;
+}
+
+/* ==========================
+   Boutons
+========================== */
+button {
+  background-color: #3b82f6; /* bleu */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb; /* bleu plus foncé */
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ==========================
+   Liens
+========================== */
+a {
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
