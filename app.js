@@ -20,6 +20,21 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// API root (useful when visiting /api in a browser)
+app.get('/api', (req, res) => {
+  res.json({
+    success: true,
+    message: 'API OK',
+    endpoints: [
+      'GET  /api/health',
+      'POST /api/calculator/calculate',
+      'POST /api/ai/recommendations',
+      'POST /api/auth/register',
+      'POST /api/auth/login'
+    ]
+  });
+});
+
 // Routes (kept inside /api folder)
 app.use('/api/auth', require('./api/routes/auth'));
 app.use('/api/calculator', require('./api/routes/calculator'));
