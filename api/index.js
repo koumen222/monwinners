@@ -16,3 +16,4 @@ module.exports = async (req, res) => {
   await ensureDbOnce();
   return app(req, res);
 };
+

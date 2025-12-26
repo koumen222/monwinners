@@ -1,6 +1,6 @@
 import React from 'react';
 import Cal from './Components/Cal';
-import ProduitsStockes from './components/ProduitsStockes';
+import ProduitsStockes from './Components/ProduitsStockes';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
