@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+
+// Optional: loads .env locally; on Render/Vercel you should use dashboard env vars.
 require('dotenv').config();
 
 const app = express();
@@ -9,19 +11,20 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Route de test pour vérifier que le serveur fonctionne
+// Healthcheck
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    success: true, 
+  res.json({
+    success: true,
     message: 'Serveur opérationnel',
     timestamp: new Date().toISOString()
   });
 });
 
-// Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/calculator', require('./routes/calculator'));
-app.use('/api/ai', require('./routes/ai'));
+// Routes (kept inside /api folder)
+app.use('/api/auth', require('./api/routes/auth'));
+app.use('/api/calculator', require('./api/routes/calculator'));
+app.use('/api/ai', require('./api/routes/ai'));
 
 module.exports = app;
+
 

@@ -1,10 +1,8 @@
 const app = require('./app');
-const connectDB = require('./config/db');
+const connectDB = require('./api/config/db');
 
 const PORT = process.env.PORT || 5000;
 
-// Render / VPS entrypoint: start a long-running HTTP server.
-// (On Vercel, we use api/index.js which exports a serverless handler.)
 async function start() {
   try {
     await connectDB(); // optional (skips if MONGODB_URI not set)
@@ -14,8 +12,10 @@ async function start() {
   }
 
   app.listen(PORT, () => {
-    console.log(`✅ API listening on port ${PORT}`);
+    console.log(`✅ Server started on port ${PORT}`);
   });
 }
 
 start();
+
+
